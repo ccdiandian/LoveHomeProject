@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#505050"
+    android:background="#cfcfcf"
     >
 
     <LinearLayout
@@ -40,9 +40,35 @@
             android:layout_marginRight="10dp"
             />
 
-
-
-
     </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/listView1"
+        >
+
+    </ListView>
+
+    <!--<ListView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:id="@+id/listView2">-->
+
+    <!--</ListView>-->
+
+    <!--  -->
+    <Button
+        android:id="@+id/exit"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:textColor="#ffffff"
+        android:background="@drawable/exit_login"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        />
 
 </LinearLayout>
