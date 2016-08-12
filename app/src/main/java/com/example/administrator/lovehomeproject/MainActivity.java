@@ -46,6 +46,46 @@ public class MainActivity extends FragmentActivity {
             }
         };
         viewPager.setAdapter(adapter);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                // 当页面在拖动的过程中
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                // 当页面切换之后
+                img1.setImageResource(R.drawable.home);
+                img2.setImageResource(R.drawable.publish);
+                img3.setImageResource(R.drawable.wode);
+                tv1.setTextColor(Color.rgb(66,66,66));
+                tv2.setTextColor(Color.rgb(66,66,66));
+                tv3.setTextColor(Color.rgb(66,66,66));
+                switch (position){
+                    case 0:
+                        img1.setImageResource(R.drawable.home_press);
+                        tv1.setTextColor(Color.rgb(51,196,76));
+                        break;
+
+                    case 1:
+                        img2.setImageResource(R.drawable.publish_press);
+                        tv2.setTextColor(Color.rgb(51,196,76));
+                        break;
+
+                    case 2:
+                        img3.setImageResource(R.drawable.wode_press);
+                        tv3.setTextColor(Color.rgb(51,196,76));
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                // 当页面在拖动状态发生改变的时候（开始动，停止动）
+            }
+        });
 
     }
 
@@ -62,31 +102,18 @@ public class MainActivity extends FragmentActivity {
 
     public void pageChange(View v){
 
-        img1.setImageResource(R.drawable.home);
-        img2.setImageResource(R.drawable.publish);
-        img3.setImageResource(R.drawable.wode);
-        tv1.setTextColor(Color.rgb(66,66,66));
-        tv2.setTextColor(Color.rgb(66,66,66));
-        tv3.setTextColor(Color.rgb(66,66,66));
-
         switch (v.getId()){
 
             case R.id.layout1:
                 viewPager.setCurrentItem(0);
-                img1.setImageResource(R.drawable.home_press);
-                tv1.setTextColor(Color.rgb(51,196,76));
                 break;
 
             case R.id.layout2:
                 viewPager.setCurrentItem(1);
-                img2.setImageResource(R.drawable.publish_press);
-                tv2.setTextColor(Color.rgb(51,196,76));
                 break;
 
             case R.id.layout3:
                 viewPager.setCurrentItem(2);
-                img3.setImageResource(R.drawable.wode_press);
-                tv3.setTextColor(Color.rgb(51,196,76));
                 break;
         }
     }

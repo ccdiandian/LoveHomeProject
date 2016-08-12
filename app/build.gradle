@@ -26,4 +26,5 @@ dependencies {
     compile project(':homepage')
     compile project(':mine')
     compile project(':publish')
+    compile files('libs/fastjson-1.2.7.jar')
 }

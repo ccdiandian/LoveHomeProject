@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class Mind extends android.support.v4.app.Fragment {
     ListView listView1,listView2;
     List<String> list1 = new ArrayList<String>();
     List<Integer> list2 = new ArrayList<Integer>();
+    List<String> list3 = new ArrayList<String>();
+    List<Integer> list4 = new ArrayList<Integer>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -39,21 +42,32 @@ public class Mind extends android.support.v4.app.Fragment {
         View view = inflater.inflate(com.example.mine.R.layout.fragment_mind,container,false);
         listView1 = (ListView)view.findViewById(com.example.mine.R.id.listView1);
         listView2 = (ListView)view.findViewById(com.example.mine.R.id.listView2);
+        //填充上半部分
         for (int i = 0 ; i<4;i++){
             list1.add(mine[i]);
             list2.add(img[i]);
         }
         MineItemAdapter adapter = new MineItemAdapter(getActivity(),list1,list2);
         listView1.setAdapter(adapter);
-        list1.clear();
-        list2.clear();
+        //填充下半部分
         for(int i = 4 ;i<mine.length;i++){
-            list1.add(mine[i]);
-            list2.add(img[i]);
+            list3.add(mine[i]);
+            list4.add(img[i]);
         }
-        MineItemAdapter adapter2 = new MineItemAdapter(getActivity(),list1,list2);
+        MineItemAdapter adapter2 = new MineItemAdapter(getActivity(),list3,list4);
         listView2.setAdapter(adapter2);
 
         return view;
     }
+
+    public void clieckListView(){
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
+    }
+
+
 }

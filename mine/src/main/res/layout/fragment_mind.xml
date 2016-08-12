@@ -30,6 +30,7 @@
             android:layout_gravity="center"
             android:textColor="#ffffff"
             android:layout_marginLeft="20dp"
+            android:id="@+id/userName"
             />
 
         <ImageView
@@ -37,15 +38,16 @@
             android:layout_height="wrap_content"
             android:src="@drawable/img_my_fragment_title_right"
             android:layout_gravity="center"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20dp"
             />
 
     </LinearLayout>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:id="@+id/listView1"
+        android:background="#ffffff"
         >
 
     </ListView>
@@ -53,8 +55,10 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/listView2">
+        android:layout_marginTop="20dp"
+        android:id="@+id/listView2"
+        android:background="#ffffff"
+        >
 
     </ListView>
 
